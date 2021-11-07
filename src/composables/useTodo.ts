@@ -1,8 +1,9 @@
 import { ref, Ref, computed, ComputedRef } from 'vue'
+import { useLocalStorage } from '@vueuse/core'
 
 import { TodoItem, TodoList } from './todo'
 
-const todoList: Ref<TodoList> = ref([])
+const todoList: Ref<TodoList> = ref(useLocalStorage('todolist', []))
 const allCount: ComputedRef<number> = computed(() => todoList.value.length)
 const completedCount: ComputedRef<number> = computed(() => todoList.value.filter(item => item.completed).length)
 
