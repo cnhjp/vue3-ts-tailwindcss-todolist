@@ -3,3 +3,5 @@ import App from './App.vue'
 import './style/index.scss'
 
 createApp(App).mount('#app')
+
+console.log('x')
